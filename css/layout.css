@@ -1,0 +1,54 @@
+#container{
+		margin: 0 auto;
+		width: 1024px;
+	}
+	#left_menu{
+		border: 2px solid #EEE;
+		float: left;
+		width: 190px;
+		height: 488px;
+		padding-top: 10px;
+        background-color: #EDEDED;
+	}
+	#left_menu label{
+		color: #888;
+		font-size: 40px;
+        padding-left: 10px;
+		font-family: sans-serif;
+	}
+	#left_menu .menu{
+		font-size: 20px;
+		line-height: 30px;
+		color: #888;
+		display: block;
+		height: 40px;
+		padding-left: 30px;
+		background-image: url('../images/label.gif');
+        background-repeat: no-repeat;
+	}
+#left_menu a:visited{
+    color: red;
+}
+    #left_menu a:hover{
+        background: url("../images/nav_on.gif");
+        color: white;
+    }
+	#right_content{
+		border: 1px solid #EEE;
+		float: right;
+		width: 825px;
+		height: 500px;
+	}
+	iframe{
+		width: 825px;
+		height: 500px;
+	}
+	#footer{
+		border: 1px solid #EEE;
+		height: 50px;
+		width: 1022px;
+		float: left;
+		margin: 5px 0px;
+		clear: both;
+
+	}
