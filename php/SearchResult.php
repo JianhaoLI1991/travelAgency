@@ -36,9 +36,6 @@ if($result){?>
 }
 ?>
 </table></form></div>
-<div id="flightDetail">
-    <h1This is flightDetails
-</div>
     <script type="text/javascript" src="../js/javascript.js"></script>
 </body>
 </html>

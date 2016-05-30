@@ -7,13 +7,13 @@ for($i=0;$i<sizeof($_SESSION['route_no']);$i++){
     $from = $_SESSION['from_city'][$i];
     $to = $_SESSION['to_city'][$i];
     $price = $_SESSION['price'][$i];
-    $child = $_SESSION['child'][$i];
-    $wheelchair = $_SESSION['wheelChair'][$i];
-    $specialDiet = $_SESSION['specialDiet'][$i];
     $seats = $_SESSION['total_number_seats'][$i];
+    $child = $_SESSION['child'][$i];
+    $wheelChair = $_SESSION['wheelChair'][$i];
+    $specialDiet = $_SESSION['specialDiet'][$i];
     $totalPrice = $Total_Price=$_SESSION['price'][$i]*$_SESSION['total_number_seats'][$i];
-    $flight = "\r       " . $route . "    " . $from . "   " . $to . " " . $price . "  " . $child . "  " . $wheelchair . "  " . $specialDiet . "   "
-        . $seats . "  " . $totalPrice;
+    $flight = "\r       " . $route . "    " . $from . "   " . $to . " " . $price . "   "
+        . $seats . "    " . $child . "    " . $wheelChair . "    " . $specialDiet .  "  " . $totalPrice;
     $allFlight .= $flight;
     
 }
@@ -28,7 +28,7 @@ $message =
          
          Address:" . $_SESSION['addressFull'] . "
          
-    Route_No   From    To  Price   Child   Wheelchair  Special-diet    Seats   Total_price" . $allFlight;
+    Route_No   From    To  Price    Seats   Child   wheelChair     specialDiet    Total_price" . $allFlight;
 
 $headers = 'From: 11811609@student.uts.edu.au' . "\r\n" .
     'Reply-To: 11811609@student.uts.edu.au' . "\r\n" .

@@ -7,14 +7,14 @@
 </head>
 <body onload="change_type(1)">
 <table>
-    <form action="./SearchResult.php" method="GET" target="Content">
+    <form action="./SearchResult.php" method="GET" target="Content" onsubmit=" return checkEmpty()">
         <tr>
             <th>Search Type:&nbsp;</th>
             <td>
-                Route_no<input type="radio" name="type" value="1" checked="checked" onclick="change_type(1)">&nbsp;
-                From_city<input type="radio" name="type" value="2" onclick="change_type(2)">&nbsp;
-                To_city<input type="radio" name="type" value="3" onclick="change_type(3)">&nbsp;
-                From & To _City<input type="radio" name="type" value="4" id="searchBoth" onclick="change_type(4)">&nbsp;
+                <input type="radio" name="type" value="1" id="routeSearch" checked="checked" onclick="change_type(1)">Route_no&nbsp;
+                <input type="radio" name="type" value="2" onclick="change_type(2)">From_city&nbsp;
+                <input type="radio" name="type" value="3" onclick="change_type(3)">To_city&nbsp;
+                <input type="radio" name="type" value="4" id="searchBoth" onclick="change_type(4)">From & To _City&nbsp;
             </td>
         </tr>
         <tr id="routeNo">

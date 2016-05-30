@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $loop = count($_REQUEST) - 2;
+    $loop = count($_REQUEST);
     print_r($loop);
     for($i = 0; $i < $loop; $i++){
         $key = $_REQUEST[$i];

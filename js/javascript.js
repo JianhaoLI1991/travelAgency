@@ -153,13 +153,16 @@ function paymentCheck() {
 function deleteFlight() {
     var booked = document.getElementsByClassName('removeFlights');
     var href = "removeFlights.php?";
+    
     var key = 0;
     for(var i =0 ; i < booked.length ; i++){
         if(booked[i].checked){
-            href = href.concat(key++,"=",booked[i].getAttribute('id'),"&");
+            var para = key + "=" + booked[i].getAttribute('id') + "&";
+            href = href.concat(para);
         }
+        key++;
     }
-    if(href.indexOf("0") > -1){
+    if(href.length > 18){
         if(confirm("Are you sure to delete selected flights")) {
             document.getElementById("removeHref").setAttribute("href", href);
             return true;
@@ -168,4 +171,26 @@ function deleteFlight() {
         alert("you should select at least one flight");
         return false;
     }
+}
+function checkEmpty() {
+    if(document.getElementById('routeSearch').checked){
+        var value =document.getElementById('route').value;
+        if(value == "" ||isNaN(value)){
+            alert('Route number must be number and cannot be empty!');
+            return false;
+        }
+    }
+    return true;
+}
+var num = 0;
+function seatChange(seat){
+
+    if(seat.checked) {
+        document.getElementById(seat.getAttribute('name')).removeAttribute('hidden');
+        num++;
+    }else{
+        document.getElementById(seat.getAttribute('name')).setAttribute('hidden','true');
+        num--;
+    }
+    document.getElementById('seatSelected').innerHTML = "seatsSelected: " + num;
 }

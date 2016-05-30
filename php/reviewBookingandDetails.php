@@ -21,9 +21,6 @@
             <th style="text-align: left">From</th>
             <th style="text-align: left">To</th>
             <th style="text-align: left">Price</th>
-<!--            <th style="text-align: left">Child</th>-->
-<!--            <th style="text-align: left">WheelChair</th>-->
-<!--            <th style="text-align: left">SpecialDiet</th>-->
             <th style="text-align: left">Seats</th>
             <th style="text-align: left">Total_Price</th>
         </tr>
@@ -33,9 +30,6 @@
             print "<td>" . $_SESSION['from_city'][$i] ."</td>";
             print "<td>" . $_SESSION['to_city'][$i] . "</td>";
             print "<td>" . $_SESSION['price'][$i] . "</td>";
-//            print "<td>" . $_SESSION['child'][$i] . "</td>";
-//            print "<td>" . $_SESSION['wheelChair'][$i] . "</td>";
-//            print "<td>" . $_SESSION['specialDiet'][$i] . "</td>";
             print "<td>" . $_SESSION['total_number_seats'][$i] . "</td>";
             $Total_Price = $_SESSION['price'][$i] * $_SESSION['total_number_seats'][$i];
             print "<td>" . $Total_Price . "</td>";

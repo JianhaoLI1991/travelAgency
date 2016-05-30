@@ -9,7 +9,7 @@ $from_city = $_REQUEST['from_city'];
 $to_city = $_REQUEST['to_city'];
 $price = $_REQUEST['price'];
 ?>
-<form action="addBooking.php" method="get" onsubmit="return checkSeat()">
+<form action="addBooking.php" method="post" onsubmit="return checkSeat()">
     <table>
         <tr>
             <th style="width: 25%;">from_city:</th>
@@ -23,52 +23,41 @@ $price = $_REQUEST['price'];
             <input type="hidden" name="from_city" value="<?php echo $from_city;?>">
             <input type="hidden" name="to_city" value="<?php echo $to_city;?>">
             <input type="hidden" name="price" value="<?php echo $price;?>">
-<!--        <tr>-->
-<!--            <th>child:</th>-->
-<!--            <td><input type="radio" name="child" value="yes">Yes<input type="radio" name="child" value="no" checked="checked">No</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <th>wheelChair:</th>-->
-<!--            <td><input type="radio" name="wheelChair" value="yes">Yes<input type="radio" name="wheelChair" value="no" checked="checked">No</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <th>specialDiet:</th>-->
-<!--            <td><input type="radio" name="specialDiet" value="yes">Yes<input type="radio" name="specialDiet" value="no" checked="checked">No</td>-->
-<!--        </tr>-->
         <tr>
             <th rowspan="6">seats:</th>
-                <tr><td><input type="checkbox" class="seat" name="seat1" checked="checked" onchange="seatChange(this);">seat1
-                    <td id="seat1" >
-                        <input type="checkbox">child
-                        <input type="checkbox">wheelchair
-                        <input type="checkbox">special-diet
+                <tr><td><input type="checkbox" class="seat" name="seat1"  onchange="seatChange(this);">seat1
+                    <td id="seat1" hidden >
+                        <input type="checkbox" name="child1">child
+                        <input type="checkbox" name="wheelchair1">wheelchair
+                        <input type="checkbox" name="specialDiet1">special-diet
                     </td>
                 </td></tr>
                 <tr><td><input type="checkbox" class="seat" name="seat2" onchange="seatChange(this);" >seat2</td>
                     <td id="seat2" hidden >
-                        <input type="checkbox">child
-                        <input type="checkbox">wheelchair
-                        <input type="checkbox">special-diet
+                        <input type="checkbox" name="child2">child
+                        <input type="checkbox" name="wheelchair2">wheelchair
+                        <input type="checkbox" name="specialDiet2">special-diet
                     </td></tr>
                 <tr><td><input type="checkbox" class="seat" name="seat3" onchange="seatChange(this);" >seat3</td>
                     <td id="seat3" hidden >
-                        <input type="checkbox">child
-                        <input type="checkbox">wheelchair
-                        <input type="checkbox">special-diet
+                        <input type="checkbox" name="child3">child
+                        <input type="checkbox" name="wheelchair3">wheelchair
+                        <input type="checkbox" name="specialDiet3">special-diet
                     </td></tr>
                 <tr><td><input type="checkbox" class="seat" name="seat4" onchange="seatChange(this);">seat4</td>
                     <td id="seat4" hidden >
-                        <input type="checkbox">child
-                        <input type="checkbox">wheelchair
-                        <input type="checkbox">special-diet
+                        <input type="checkbox" name="child4">child
+                        <input type="checkbox" name="wheelchair4">wheelchair
+                        <input type="checkbox" name="specialDiet4">special-diet
                     </td></tr>
                 <tr><td><input type="checkbox" class="seat" name="seat5" onchange="seatChange(this);">seat5</td>
                     <td id="seat5" hidden >
-                        <input type="checkbox">child
-                        <input type="checkbox">wheelchair
-                        <input type="checkbox">special-diet
+                        <input type="checkbox" name="child5">child
+                        <input type="checkbox" name="wheelchair5">wheelchair
+                        <input type="checkbox" name="specialDiet5">special-diet
                     </td></tr>
         </tr>
+        <tr><td colspan="3" style="text-align: right" id="seatSelected"></td></tr>
         <tr>
 
             <td colspan="2" style="text-align: right"><input type="button" value="Back" onclick="window.history.back();"></a></td>
@@ -78,13 +67,5 @@ $price = $_REQUEST['price'];
 </form>
 </body>
 <script type="text/javascript" src="../js/javascript.js"></script>
-<script type="text/javascript">
-    function seatChange(seat){
-        if(seat.checked) {
-            document.getElementById(seat.getAttribute('name')).removeAttribute('hidden');
-        }else{
-            document.getElementById(seat.getAttribute('name')).setAttribute('hidden','true');
-        }
-    }
-</script>
+
 </html>

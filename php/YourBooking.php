@@ -13,9 +13,9 @@
             <th>From_city</th>
             <th>To_city</th>
             <th>Price</th>
-<!--            <th>Child</th>-->
-<!--            <th>WheelChair</th>-->
-<!--            <th>SpecialDiet</th>-->
+            <th>Child</th>
+            <th>WheelChair</th>
+            <th>SpecialDiet</th>
             <th>Seats</th>
             <th>Total_Price</th>
             <th>Remove_Flights</th>
@@ -28,9 +28,9 @@
             print "<td>" . $_SESSION['from_city'][$i] . "</td>";
             print "<td>" . $_SESSION['to_city'][$i] . "</td>";
             print "<td>" . $_SESSION['price'][$i] . "</td>";
-//            print "<td>" . $_SESSION['child'][$i] . "</td>";
-//            print "<td>" . $_SESSION['wheelChair'][$i] . "</td>";
-//            print "<td>" . $_SESSION['specialDiet'][$i] . "</td>";
+            print "<td>" . $_SESSION['child'][$i] . "</td>";
+            print "<td>" . $_SESSION['wheelChair'][$i] . "</td>";
+            print "<td>" . $_SESSION['specialDiet'][$i] . "</td>";
             print "<td>" . $_SESSION['total_number_seats'][$i] . "</td>";
             $Total_Price = $_SESSION['price'][$i] * $_SESSION['total_number_seats'][$i];
             print "<td>" . $Total_Price . "</td>";
@@ -40,7 +40,7 @@
     }
 ?>
             <tr>
-                <td colspan="7">
+                <td colspan="10">
                     <a href="clearBooking.php" target="Content"><input type="button" class="button" value="Clear all Booked Flights" onclick="return confirm('Are you sure to clear your bookings')"></a>
                     <a href="#" target="Content" onclick="return deleteFlight()" id="removeHref"><input type="button" class="button" value="Delete selected flights"></a>
                     <a href="./SearchFlight.php" target="Content"><input type="button" class="button" value="Book more Flights"></a>
